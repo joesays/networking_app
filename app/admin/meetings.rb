@@ -1,4 +1,6 @@
 ActiveAdmin.register Meeting do
+
+ permit_params :connections_id, :date, :meeting_notes, :location_id, :user_id, :meeting_type
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
