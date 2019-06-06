@@ -1,6 +1,6 @@
 class ConnectionsController < ApplicationController
   def index
-    @connections = Connection.all
+    @connections = Connection.page(params[:page]).per(10)
 
     render("connection_templates/index.html.erb")
   end

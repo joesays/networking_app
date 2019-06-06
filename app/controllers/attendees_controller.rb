@@ -1,6 +1,6 @@
 class AttendeesController < ApplicationController
   def index
-    @attendees = Attendee.all
+    @attendees = Attendee.page(params[:page]).per(10)
 
     render("attendee_templates/index.html.erb")
   end

@@ -10,7 +10,7 @@ class MeetingsController < ApplicationController
   end
 
   def index
-    @meetings = Meeting.all
+    @meetings = Meeting.page(params[:page]).per(10)
 
     render("meeting_templates/index.html.erb")
   end
