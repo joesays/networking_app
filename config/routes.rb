@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Attendee resource:
+
+  # CREATE
+  get("/attendees/new", { :controller => "attendees", :action => "new_form" })
+  post("/create_attendee", { :controller => "attendees", :action => "create_row" })
+
+  # READ
+  get("/attendees", { :controller => "attendees", :action => "index" })
+  get("/attendees/:id_to_display", { :controller => "attendees", :action => "show" })
+
+  # UPDATE
+  get("/attendees/:prefill_with_id/edit", { :controller => "attendees", :action => "edit_form" })
+  post("/update_attendee/:id_to_modify", { :controller => "attendees", :action => "update_row" })
+
+  # DELETE
+  get("/delete_attendee/:id_to_remove", { :controller => "attendees", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Location resource:
 
   # CREATE
