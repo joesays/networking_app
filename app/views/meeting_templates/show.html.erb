@@ -13,17 +13,21 @@
 
       <!-- Edit link meeting start -->
       <div class="col">
-        <a href="/meetings/<%= @meeting.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit meeting
-        </a>
+        <% if current_user == @meeting.user %>
+          <a href="/meetings/<%= @meeting.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit meeting
+          </a>
+        <% end %>
       </div>
       <!-- Edit link meeting end -->
 
       <!-- Delete link meeting start -->
       <div class="col">
-        <a href="/delete_meeting/<%= @meeting.id %>" class="btn btn-block btn-outline-secondary">
-          Delete meeting
-        </a>
+        <% if current_user == @meeting.user %>
+          <a href="/delete_meeting/<%= @meeting.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete meeting
+          </a>
+        <% end %>
       </div>
       <!-- Delete link meeting end -->
     </div>

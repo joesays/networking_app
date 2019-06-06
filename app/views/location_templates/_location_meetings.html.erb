@@ -17,9 +17,11 @@
         <!-- Show link end -->
 
         <!-- Delete link start -->
-        <a href="/delete_meeting_from_location/<%= meeting.id %>">
-          Delete
-        </a>
+        <%if current_user == meeting.user %>
+          <a href="/delete_meeting_from_location/<%= meeting.id %>">
+            Delete
+          </a>
+        <% end %>
         <!-- Delete link end -->
 
       </li>
