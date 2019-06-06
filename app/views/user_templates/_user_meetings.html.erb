@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Meetings
+
+    <a data-toggle="collapse" href="#user_meetings_new_form">
+      Add meeting
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.meetings.each do |meeting| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/meetings/<%= meeting.id %>">
+          <%= meeting.id %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

@@ -53,6 +53,22 @@ class AttendeesController < ApplicationController
     end
   end
 
+  def destroy_row_from_meeting
+    @attendee = Attendee.find(params.fetch("id_to_remove"))
+
+    @attendee.destroy
+
+    redirect_to("/meetings/#{@attendee.meeting_id}", notice: "Attendee deleted successfully.")
+  end
+
+  def destroy_row_from_connection
+    @attendee = Attendee.find(params.fetch("id_to_remove"))
+
+    @attendee.destroy
+
+    redirect_to("/connections/#{@attendee.connection_id}", notice: "Attendee deleted successfully.")
+  end
+
   def destroy_row
     @attendee = Attendee.find(params.fetch("id_to_remove"))
 

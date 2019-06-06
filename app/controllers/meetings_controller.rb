@@ -61,6 +61,22 @@ class MeetingsController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @meeting = Meeting.find(params.fetch("id_to_remove"))
+
+    @meeting.destroy
+
+    redirect_to("/users/#{@meeting.user_id}", notice: "Meeting deleted successfully.")
+  end
+
+  def destroy_row_from_location
+    @meeting = Meeting.find(params.fetch("id_to_remove"))
+
+    @meeting.destroy
+
+    redirect_to("/locations/#{@meeting.location_id}", notice: "Meeting deleted successfully.")
+  end
+
   def destroy_row
     @meeting = Meeting.find(params.fetch("id_to_remove"))
 
