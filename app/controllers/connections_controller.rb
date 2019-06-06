@@ -1,6 +1,7 @@
 class ConnectionsController < ApplicationController
   def index
-    @connections = Connection.page(params[:page]).per(10)
+    @q = Connection.ransack(params[:q])
+    @connections = @q.result(:distinct => true).includes(:attendees, :company, :location).page(params[:page]).per(10)
 
     render("connection_templates/index.html.erb")
   end

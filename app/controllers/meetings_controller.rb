@@ -10,7 +10,8 @@ class MeetingsController < ApplicationController
   end
 
   def index
-    @meetings = Meeting.page(params[:page]).per(10)
+    @q = Meeting.ransack(params[:q])
+    @meetings = @q.result(:distinct => true).includes(:user, :attendees, :location).page(params[:page]).per(10)
 
     render("meeting_templates/index.html.erb")
   end

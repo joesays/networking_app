@@ -1,6 +1,7 @@
 class AttendeesController < ApplicationController
   def index
-    @attendees = Attendee.page(params[:page]).per(10)
+    @q = Attendee.ransack(params[:q])
+    @attendees = @q.result(:distinct => true).includes(:meeting, :connection).page(params[:page]).per(10)
 
     render("attendee_templates/index.html.erb")
   end
