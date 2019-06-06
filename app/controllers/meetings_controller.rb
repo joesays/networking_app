@@ -69,7 +69,7 @@ class MeetingsController < ApplicationController
     @meeting.date = params.fetch("date")
     @meeting.meeting_notes = params.fetch("meeting_notes")
     @meeting.location_id = params.fetch("location_id")
-    @meeting.user_id = params.fetch("user_id")
+    
     @meeting.meeting_type = params.fetch("meeting_type")
 
     if @meeting.valid?
