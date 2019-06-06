@@ -6,6 +6,7 @@ class CompaniesController < ApplicationController
   end
 
   def show
+    @connection = Connection.new
     @company = Company.find(params.fetch("id_to_display"))
 
     render("company_templates/show.html.erb")

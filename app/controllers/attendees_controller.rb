@@ -32,6 +32,36 @@ class AttendeesController < ApplicationController
     end
   end
 
+  def create_row_from_meeting
+    @attendee = Attendee.new
+
+    @attendee.meeting_id = params.fetch("meeting_id")
+    @attendee.connection_id = params.fetch("connection_id")
+
+    if @attendee.valid?
+      @attendee.save
+
+      redirect_to("/meetings/#{@attendee.meeting_id}", notice: "Attendee created successfully.")
+    else
+      render("attendee_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_connection
+    @attendee = Attendee.new
+
+    @attendee.meeting_id = params.fetch("meeting_id")
+    @attendee.connection_id = params.fetch("connection_id")
+
+    if @attendee.valid?
+      @attendee.save
+
+      redirect_to("/connections/#{@attendee.connection_id}", notice: "Attendee created successfully.")
+    else
+      render("attendee_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @attendee = Attendee.find(params.fetch("prefill_with_id"))
 

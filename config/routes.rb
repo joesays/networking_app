@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   # CREATE
   get("/attendees/new", { :controller => "attendees", :action => "new_form" })
   post("/create_attendee", { :controller => "attendees", :action => "create_row" })
+  post("/create_attendee_from_connection", { :controller => "attendees", :action => "create_row_from_connection" })
+  post("/create_attendee_from_meeting", { :controller => "attendees", :action => "create_row_from_meeting" })
 
   # READ
   get("/attendees", { :controller => "attendees", :action => "index" })
@@ -66,6 +68,8 @@ Rails.application.routes.draw do
   # CREATE
   get("/connections/new", { :controller => "connections", :action => "new_form" })
   post("/create_connection", { :controller => "connections", :action => "create_row" })
+  post("/create_connection_from_location", { :controller => "connections", :action => "create_row_from_location" })
+  post("/create_connection_from_company", { :controller => "connections", :action => "create_row_from_company" })
 
   # READ
   get("/connections", { :controller => "connections", :action => "index" })
@@ -87,6 +91,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/meetings/new", { :controller => "meetings", :action => "new_form" })
   post("/create_meeting", { :controller => "meetings", :action => "create_row" })
+  post("/create_meeting_from_location", { :controller => "meetings", :action => "create_row_from_location" })
 
   # READ
   get("/meetings", { :controller => "meetings", :action => "index" })

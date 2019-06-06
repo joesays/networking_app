@@ -6,6 +6,7 @@ class ConnectionsController < ApplicationController
   end
 
   def show
+    @attendee = Attendee.new
     @connection = Connection.find(params.fetch("id_to_display"))
 
     render("connection_templates/show.html.erb")
@@ -30,6 +31,42 @@ class ConnectionsController < ApplicationController
       @connection.save
 
       redirect_back(:fallback_location => "/connections", :notice => "Connection created successfully.")
+    else
+      render("connection_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_company
+    @connection = Connection.new
+
+    @connection.company_id = params.fetch("company_id")
+    @connection.location_id = params.fetch("location_id")
+    @connection.photo = params.fetch("photo")
+    @connection.name = params.fetch("name")
+    @connection.linkein = params.fetch("linkein")
+
+    if @connection.valid?
+      @connection.save
+
+      redirect_to("/companies/#{@connection.company_id}", notice: "Connection created successfully.")
+    else
+      render("connection_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_location
+    @connection = Connection.new
+
+    @connection.company_id = params.fetch("company_id")
+    @connection.location_id = params.fetch("location_id")
+    @connection.photo = params.fetch("photo")
+    @connection.name = params.fetch("name")
+    @connection.linkein = params.fetch("linkein")
+
+    if @connection.valid?
+      @connection.save
+
+      redirect_to("/locations/#{@connection.location_id}", notice: "Connection created successfully.")
     else
       render("connection_templates/new_form_with_errors.html.erb")
     end

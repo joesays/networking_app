@@ -1,0 +1,61 @@
+<!-- Form connection start -->
+<form action="/create_connection_from_company" method="post">
+<!-- Form connection end -->
+
+  <!-- Label and input for company_id start -->
+  <!-- Input for company_id start -->
+  <input type="hidden" name="company_id" value="<%= @company.id %>">
+  <!-- Input for company_id end -->
+
+  <!-- Label and input for location_id start -->
+  <div class="form-group">
+    <label for="location_id">
+      Location
+    </label>
+
+    <!-- Input for location_id start -->
+    <input type="text" id="location_id" name="location_id" class="form-control" value="<%= @connection.location_id %>">
+    <!-- Input for location_id end -->
+  </div>
+  <!-- Label and input for location_id end -->
+
+  <!-- Label and input for photo start -->
+  <div class="form-group">
+    <label for="photo">
+      Photo
+    </label>
+
+    <!-- Input for photo start -->
+    <input type="text" id="photo" name="photo" class="form-control" value="<%= @connection.photo %>">
+    <!-- Input for photo end -->
+  </div>
+  <!-- Label and input for photo end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <!-- Input for name start -->
+    <input type="text" id="name" name="name" class="form-control" value="<%= @connection.name %>">
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <!-- Label and input for linkein start -->
+  <div class="form-group">
+    <label for="linkein">
+      Linkein
+    </label>
+
+    <!-- Input for linkein start -->
+    <input type="text" id="linkein" name="linkein" class="form-control" value="<%= @connection.linkein %>">
+    <!-- Input for linkein end -->
+  </div>
+  <!-- Label and input for linkein end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create connection
+  </button>
+</form>
