@@ -34,7 +34,9 @@
       </dt>
       <!-- Display address start -->
       <dd>
-        <%= @location.address %>
+        <div>
+          <%= render partial: "location_templates/one_photo_map" %>
+        </div>
       </dd>
       <!-- Display address end -->
 
