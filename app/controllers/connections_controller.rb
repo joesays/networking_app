@@ -23,7 +23,7 @@ class ConnectionsController < ApplicationController
 
     @connection.company_id = params.fetch("company_id")
     @connection.location_id = params.fetch("location_id")
-    @connection.photo = params.fetch("photo")
+    @connection.photo = params.fetch("photo") if params.key?("photo")
     @connection.name = params.fetch("name")
     @connection.linkein = params.fetch("linkein")
 
@@ -41,7 +41,7 @@ class ConnectionsController < ApplicationController
 
     @connection.company_id = params.fetch("company_id")
     @connection.location_id = params.fetch("location_id")
-    @connection.photo = params.fetch("photo")
+    @connection.photo = params.fetch("photo") if params.key?("photo")
     @connection.name = params.fetch("name")
     @connection.linkein = params.fetch("linkein")
 
@@ -59,7 +59,7 @@ class ConnectionsController < ApplicationController
 
     @connection.company_id = params.fetch("company_id")
     @connection.location_id = params.fetch("location_id")
-    @connection.photo = params.fetch("photo")
+    @connection.photo = params.fetch("photo") if params.key?("photo")
     @connection.name = params.fetch("name")
     @connection.linkein = params.fetch("linkein")
 
@@ -83,7 +83,7 @@ class ConnectionsController < ApplicationController
 
     @connection.company_id = params.fetch("company_id")
     @connection.location_id = params.fetch("location_id")
-    @connection.photo = params.fetch("photo")
+    @connection.photo = params.fetch("photo") if params.key?("photo")
     @connection.name = params.fetch("name")
     @connection.linkein = params.fetch("linkein")
 
