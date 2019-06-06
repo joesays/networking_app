@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @meeting.attendees.each do |attendee| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/attendees/<%= attendee.id %>">
           <%= attendee.connection_id %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_attendee_from_meeting/<%= attendee.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="meeting_attendees_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "meeting_templates/meeting_attendees_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

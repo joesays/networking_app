@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link meeting start -->
       <div class="col">
         <% if current_user == @meeting.user %>
           <a href="/meetings/<%= @meeting.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link meeting end -->
 
-      <!-- Delete link meeting start -->
       <div class="col">
         <% if current_user == @meeting.user %>
           <a href="/delete_meeting/<%= @meeting.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,41 +26,33 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link meeting end -->
     </div>
 
     <dl>
       <dt>
         Connections
       </dt>
-      <!-- Display connections_id start -->
       <dd>
         <%= @meeting.connections_id %>
       </dd>
-      <!-- Display connections_id end -->
 
       <dt>
         Date
       </dt>
-      <!-- Display date start -->
       <dd>
         <%= @meeting.date %>
       </dd>
-      <!-- Display date end -->
 
       <dt>
         Meeting notes
       </dt>
-      <!-- Display meeting_notes start -->
       <dd>
         <%= @meeting.meeting_notes %>
       </dd>
-      <!-- Display meeting_notes end -->
 
       <dt>
         Location
       </dt>
-      <!-- Display location_id start -->
       <dd>
         <% if @meeting.location.present? %>
           <a href="/locations/<%= @meeting.location_id %>">
@@ -71,12 +60,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display location_id end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @meeting.user.present? %>
           <a href="/users/<%= @meeting.user_id %>">
@@ -84,42 +71,33 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Meeting type
       </dt>
-      <!-- Display meeting_type start -->
       <dd>
         <%= @meeting.meeting_type %>
       </dd>
-      <!-- Display meeting_type end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@meeting.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@meeting.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "meeting_templates/meeting_attendees" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

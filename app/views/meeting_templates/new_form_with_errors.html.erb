@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @meeting.present? %>
   <% if @meeting.errors.any? %>
     <% @meeting.errors.full_messages.each do |message| %>
@@ -16,75 +15,49 @@
 
 <hr>
 
-<!-- Form meeting start -->
 <form action="/create_meeting" method="post">
-<!-- Form meeting end -->
 
-  <!-- Label and input for connections_id start -->
   <div class="form-group">
     <label for="connections_id">
       Connections
     </label>
 
-    <!-- Input for connections_id start -->
     <input type="text" id="connections_id" name="connections_id" class="form-control" value="<%= @meeting.connections_id %>">
-    <!-- Input for connections_id end -->
   </div>
-  <!-- Label and input for connections_id end -->
 
-  <!-- Label and input for date start -->
   <div class="form-group">
     <label for="date">
       Date
     </label>
 
-    <!-- Input for date start -->
     <input type="text" id="date" name="date" class="form-control" value="<%= @meeting.date %>">
-    <!-- Input for date end -->
   </div>
-  <!-- Label and input for date end -->
 
-  <!-- Label and input for meeting_notes start -->
   <div class="form-group">
     <label for="meeting_notes">
       Meeting notes
     </label>
 
-    <!-- Input for meeting_notes start -->
     <textarea id="meeting_notes" name="meeting_notes" class="form-control" rows="3"><%= @meeting.meeting_notes %></textarea>
-    <!-- Input for meeting_notes end -->
   </div>
-  <!-- Label and input for meeting_notes end -->
 
-  <!-- Label and input for location_id start -->
   <div class="form-group">
     <label for="location_id">
       Location
     </label>
 
-    <!-- Input for location_id start -->
     <%= select_tag(:location_id, options_from_collection_for_select(Location.all, :id, :address, @meeting.location_id), :class => "form-control") %>
-    <!-- Input for location_id end -->
   </div>
-  <!-- Label and input for location_id end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Input for "user_id" start -->
   <input type="hidden" name="user_id" value="<%= current_user.id %>">
-  <!-- Input for "user_id" end -->
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for meeting_type start -->
   <div class="form-group">
     <label for="meeting_type">
       Meeting type
     </label>
 
-    <!-- Input for meeting_type start -->
     <input type="text" id="meeting_type" name="meeting_type" class="form-control" value="<%= @meeting.meeting_type %>">
-    <!-- Input for meeting_type end -->
   </div>
-  <!-- Label and input for meeting_type end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create meeting

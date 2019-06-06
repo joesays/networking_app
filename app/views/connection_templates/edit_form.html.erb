@@ -4,70 +4,48 @@
 
 <hr>
 
-<!-- Form connection start -->
 <form action="/update_connection/<%= @connection.id %>" method="post" enctype="multipart/form-data">
-<!-- Form connection end -->
 
-  <!-- Label and input for company_id start -->
   <div class="form-group">
     <label for="company_id">
       Company
     </label>
 
-    <!-- Input for company_id start -->
     <%= select_tag(:company_id, options_from_collection_for_select(Company.all, :id, :company, @connection.company_id), :class => "form-control") %>
-    <!-- Input for company_id end -->
   </div>
-  <!-- Label and input for company_id end -->
 
-  <!-- Label and input for location_id start -->
   <div class="form-group">
     <label for="location_id">
       Location
     </label>
 
-    <!-- Input for location_id start -->
     <%= select_tag(:location_id, options_from_collection_for_select(Location.all, :id, :address, @connection.location_id), :class => "form-control") %>
-    <!-- Input for location_id end -->
   </div>
-  <!-- Label and input for location_id end -->
 
-  <!-- Label and input for photo start -->
   <div class="form-group">
     <label for="photo">
       Photo
     </label>
 
-    <!-- Input for photo start -->
     <%= cl_image_tag(@connection.photo.to_s, :width => 90, :height => 90, :crop => :thumb) %>
     <input type="file" id="photo" name="photo" class="form-control">
-    <!-- Input for photo end -->
   </div>
-  <!-- Label and input for photo end -->
 
-  <!-- Label and input for name start -->
   <div class="form-group">
     <label for="name">
       Name
     </label>
 
-    <!-- Input for name start -->
     <input type="text" id="name" name="name" class="form-control" value="<%= @connection.name %>">
-    <!-- Input for name end -->
   </div>
-  <!-- Label and input for name end -->
 
-  <!-- Label and input for linkein start -->
   <div class="form-group">
     <label for="linkein">
       Linkein
     </label>
 
-    <!-- Input for linkein start -->
     <input type="text" id="linkein" name="linkein" class="form-control" value="<%= @connection.linkein %>">
-    <!-- Input for linkein end -->
   </div>
-  <!-- Label and input for linkein end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update connection

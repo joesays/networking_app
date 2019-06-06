@@ -1,23 +1,14 @@
-<!-- Form attendee start -->
 <form action="/create_attendee_from_connection" method="post">
-<!-- Form attendee end -->
 
-  <!-- Label and input for meeting_id start -->
   <div class="form-group">
     <label for="meeting_id">
       Meeting
     </label>
 
-    <!-- Input for meeting_id start -->
     <%= select_tag(:meeting_id, options_from_collection_for_select(Meeting.all, :id, :id, @attendee.meeting_id), :class => "form-control") %>
-    <!-- Input for meeting_id end -->
   </div>
-  <!-- Label and input for meeting_id end -->
 
-  <!-- Label and input for connection_id start -->
-  <!-- Input for connection_id start -->
   <input type="hidden" name="connection_id" value="<%= @connection.id %>">
-  <!-- Input for connection_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create attendee

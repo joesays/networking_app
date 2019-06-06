@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link connection start -->
       <div class="col">
         <a href="/connections/<%= @connection.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit connection
         </a>
       </div>
-      <!-- Edit link connection end -->
 
-      <!-- Delete link connection start -->
       <div class="col">
         <a href="/delete_connection/<%= @connection.id %>" class="btn btn-block btn-outline-secondary">
           Delete connection
         </a>
       </div>
-      <!-- Delete link connection end -->
     </div>
 
     <dl>
       <dt>
         Company
       </dt>
-      <!-- Display company_id start -->
       <dd>
         <% if @connection.company.present? %>
           <a href="/companies/<%= @connection.company_id %>">
@@ -40,12 +35,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display company_id end -->
 
       <dt>
         Location
       </dt>
-      <!-- Display location_id start -->
       <dd>
         <% if @connection.location.present? %>
           <a href="/locations/<%= @connection.location_id %>">
@@ -53,60 +46,47 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display location_id end -->
 
       <dt>
         Photo
       </dt>
-      <!-- Display photo start -->
       <dd>
         <img src="<%= @connection.photo %>" class="img-fluid">
       </dd>
-      <!-- Display photo end -->
 
       <dt>
         Name
       </dt>
-      <!-- Display name start -->
       <dd>
         <%= @connection.name %>
       </dd>
-      <!-- Display name end -->
 
       <dt>
         Linkein
       </dt>
-      <!-- Display linkein start -->
       <dd>
         <%= @connection.linkein %>
       </dd>
-      <!-- Display linkein end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@connection.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@connection.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "connection_templates/connection_attendees" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

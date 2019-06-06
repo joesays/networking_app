@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link attendee start -->
       <div class="col">
         <a href="/attendees/<%= @attendee.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit attendee
         </a>
       </div>
-      <!-- Edit link attendee end -->
 
-      <!-- Delete link attendee start -->
       <div class="col">
         <a href="/delete_attendee/<%= @attendee.id %>" class="btn btn-block btn-outline-secondary">
           Delete attendee
         </a>
       </div>
-      <!-- Delete link attendee end -->
     </div>
 
     <dl>
       <dt>
         Meeting
       </dt>
-      <!-- Display meeting_id start -->
       <dd>
         <% if @attendee.meeting.present? %>
           <a href="/meetings/<%= @attendee.meeting_id %>">
@@ -40,12 +35,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display meeting_id end -->
 
       <dt>
         Connection
       </dt>
-      <!-- Display connection_id start -->
       <dd>
         <% if @attendee.connection.present? %>
           <a href="/connections/<%= @attendee.connection_id %>">
@@ -53,28 +46,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display connection_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@attendee.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@attendee.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

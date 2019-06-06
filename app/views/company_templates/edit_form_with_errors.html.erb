@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @company.errors.any? %>
   <% @company.errors.full_messages.each do |message| %>
     <div class="alert">
@@ -13,33 +12,23 @@
 
 <hr>
 
-<!-- Form company start -->
 <form action="/update_company/<%= @company.id %>" method="post">
-<!-- Form company end -->
 
-  <!-- Label and input for company start -->
   <div class="form-group">
     <label for="company">
       Company
     </label>
 
-    <!-- Input for company start -->
     <input type="text" id="company" name="company" class="form-control" value="<%= @company.company %>">
-    <!-- Input for company end -->
   </div>
-  <!-- Label and input for company end -->
 
-  <!-- Label and input for location start -->
   <div class="form-group">
     <label for="location">
       Location
     </label>
 
-    <!-- Input for location start -->
     <input type="text" id="location" name="location" class="form-control" value="<%= @company.location %>">
-    <!-- Input for location end -->
   </div>
-  <!-- Label and input for location end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update company
