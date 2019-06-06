@@ -70,13 +70,21 @@
 
         <!-- Display connection.company_id start -->
         <td>
-          <%= connection.company.company %>
+          <% if connection.company.present? %>
+            <a href="/companies/<%= connection.company.id %>">
+              <%= connection.company.company %>
+            </a>
+          <% end %>
         </td>
         <!-- Display connection.company_id end -->
 
         <!-- Display connection.location_id start -->
         <td>
-          <%= connection.location.address %>
+          <% if connection.location.present? %>
+            <a href="/locations/<%= connection.location.id %>">
+              <%= connection.location.address %>
+            </a>
+          <% end %>
         </td>
         <!-- Display connection.location_id end -->
 

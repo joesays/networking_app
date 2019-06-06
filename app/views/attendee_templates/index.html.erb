@@ -58,13 +58,21 @@
 
         <!-- Display attendee.meeting_id start -->
         <td>
-          <%= attendee.meeting.id %>
+          <% if attendee.meeting.present? %>
+            <a href="/meetings/<%= attendee.meeting.id %>">
+              <%= attendee.meeting.id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display attendee.meeting_id end -->
 
         <!-- Display attendee.connection_id start -->
         <td>
-          <%= attendee.connection.company_id %>
+          <% if attendee.connection.present? %>
+            <a href="/connections/<%= attendee.connection.id %>">
+              <%= attendee.connection.company_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display attendee.connection_id end -->
 

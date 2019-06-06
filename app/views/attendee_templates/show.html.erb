@@ -34,7 +34,11 @@
       </dt>
       <!-- Display meeting_id start -->
       <dd>
-        <%= @attendee.meeting_id %>
+        <% if @attendee.meeting.present? %>
+          <a href="/meetings/<%= @attendee.meeting_id %>">
+            <%= @attendee.meeting.id %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display meeting_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display connection_id start -->
       <dd>
-        <%= @attendee.connection_id %>
+        <% if @attendee.connection.present? %>
+          <a href="/connections/<%= @attendee.connection_id %>">
+            <%= @attendee.connection.company_id %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display connection_id end -->
 

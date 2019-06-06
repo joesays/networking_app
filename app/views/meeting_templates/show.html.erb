@@ -65,7 +65,11 @@
       </dt>
       <!-- Display location_id start -->
       <dd>
-        <%= @meeting.location_id %>
+        <% if @meeting.location.present? %>
+          <a href="/locations/<%= @meeting.location_id %>">
+            <%= @meeting.location.address %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display location_id end -->
 
@@ -74,7 +78,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @meeting.user_id %>
+        <% if @meeting.user.present? %>
+          <a href="/users/<%= @meeting.user_id %>">
+            <%= @meeting.user.created_at %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 

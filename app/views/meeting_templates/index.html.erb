@@ -92,13 +92,21 @@
 
         <!-- Display meeting.location_id start -->
         <td>
-          <%= meeting.location.address %>
+          <% if meeting.location.present? %>
+            <a href="/locations/<%= meeting.location.id %>">
+              <%= meeting.location.address %>
+            </a>
+          <% end %>
         </td>
         <!-- Display meeting.location_id end -->
 
         <!-- Display meeting.user_id start -->
         <td>
-          <%= meeting.user.created_at %>
+          <% if meeting.user.present? %>
+            <a href="/users/<%= meeting.user.id %>">
+              <%= meeting.user.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display meeting.user_id end -->
 
