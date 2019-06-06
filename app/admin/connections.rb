@@ -1,4 +1,6 @@
 ActiveAdmin.register Connection do
+
+ permit_params :company_id, :location_id, :photo, :name, :linkein
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
