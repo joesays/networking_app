@@ -1,0 +1,132 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All meetings
+    </h1>
+
+    <a href="/meetings/new" class="btn btn-block btn-outline-secondary">
+      Add a new meeting
+    </a>
+  </div>
+</div>
+
+<!-- Ransack Code start -->
+
+<!-- Ransack Code end -->
+
+<!-- Location Map Code start -->
+
+<!-- Location Map Code end -->
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Connections
+        </th>
+
+        <th>
+          Date
+        </th>
+
+        <th>
+          Meeting notes
+        </th>
+
+        <th>
+          Location
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          Meeting type
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @meetings.each do |meeting| %>
+      <tr>
+        <!-- Display meeting.id start -->
+        <td>
+          <%= meeting.id %>
+        </td>
+        <!-- Display meeting.id end -->
+
+        <!-- Display meeting.connections_id start -->
+        <td>
+          <%= meeting.connections_id %>
+        </td>
+        <!-- Display meeting.connections_id end -->
+
+        <!-- Display meeting.date start -->
+        <td>
+          <%= meeting.date %>
+        </td>
+        <!-- Display meeting.date end -->
+
+        <!-- Display meeting.meeting_notes start -->
+        <td>
+          <%= meeting.meeting_notes %>
+        </td>
+        <!-- Display meeting.meeting_notes end -->
+
+        <!-- Display meeting.location_id start -->
+        <td>
+          <%= meeting.location_id %>
+        </td>
+        <!-- Display meeting.location_id end -->
+
+        <!-- Display meeting.user_id start -->
+        <td>
+          <%= meeting.user_id %>
+        </td>
+        <!-- Display meeting.user_id end -->
+
+        <!-- Display meeting.meeting_type start -->
+        <td>
+          <%= meeting.meeting_type %>
+        </td>
+        <!-- Display meeting.meeting_type end -->
+
+        <!-- Display meeting.created_at start -->
+        <td>
+          <%= time_ago_in_words(meeting.created_at) %> ago
+        </td>
+        <!-- Display meeting.created_at end -->
+
+        <!-- Display meeting.updated_at start -->
+        <td>
+          <%= time_ago_in_words(meeting.updated_at) %> ago
+        </td>
+        <!-- Display meeting.updated_at end -->
+
+        <td>
+          <a href="/meetings/<%= meeting.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
